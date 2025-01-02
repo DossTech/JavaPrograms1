@@ -1,0 +1,30 @@
+public class DuplicateCharacters{  
+
+	public static void main(String[] args) {
+
+		String s = "Happy New Year 2025 ; Thank You Old Year 2024";
+
+
+
+		Map<Character,Integer> m = new LinkedHashMap<Character,Integer>();
+
+		for (int i = 0; i < s.length(); i++) {
+			char s1 = s.charAt(i);
+
+
+			if (m.containsKey(s1)) {
+				m.put(s1, m.get(s1)+1);
+
+			} else {
+				m.put(s1, 1);
+			}
+
+		}
+
+
+		Set<Entry<Character, Integer>> e = m.entrySet();
+		for (Entry<Character, Integer> e1 : e) {
+			System.out.println(e1);
+		}
+
+	}}
