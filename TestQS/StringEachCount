@@ -1,0 +1,27 @@
+public class CountCharString{  
+
+	public static void main(String[] args) {
+
+		Scanner s = new Scanner(System.in);
+		System.out.println("Please enter a String: ");
+		String s1 = s.nextLine();
+
+		Map<Character,Integer> m = new LinkedHashMap<Character,Integer>();
+
+		for (int i = 0; i < s1.length(); i++) {
+			char ca = s1.charAt(i);
+			if (m.containsKey(ca)) {
+				m.put(ca, m.get(ca)+1);
+			} else {
+				m.put(ca, 1);
+			}
+		}
+		
+		System.out.println("---------------");
+		System.out.println("Characters | Counts");
+		System.out.println("---------------");
+		Set<Entry<Character, Integer>> e1 = m.entrySet();
+		for (Entry<Character, Integer> e2 : e1) {
+			System.out.println(e2+"\n");
+		}
+	}}
