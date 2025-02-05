@@ -1,0 +1,194 @@
+package org.tcs;
+
+import java.util.Scanner;
+
+
+public class Sample {
+	//QS:1
+	private void sumOfOddNo() {//till 100
+		int sum =0;
+		int count=0;
+		for (int i = 0; i <100; i++) {
+
+			if ((i%2)!=0) {
+				sum = sum +i;
+				count++;
+			}
+
+
+		}
+		System.out.println("The sum of odd no is: "+sum);
+		System.out.println("The count of odd no is: "+count);
+		System.out.println("<===================================>");
+	}
+
+	//QS:2
+	private void sumOfEvenNo() {
+		int sum =0;
+		int count=0;
+
+		for (int i = 0; i < 100; i++) {
+			if (i%2==0) {
+				sum = sum + i;
+				count++;
+			}
+		}
+		System.out.println("The sum of even no is: "+sum);
+		System.out.println("The count of even no is: "+count);
+		System.out.println("<===================================>");
+	}
+	//QS:3
+	private void factorial() {
+
+		int a = 5;
+		int b = 1;
+		int count =0;
+		while (a>0) {
+
+			b = b * a;
+			a = a-1;
+			count++;
+		}
+		System.out.println("The factorial of a is: "+b);
+		System.out.println("The count is: "+count);
+		System.out.println("<===================================>");
+	}
+	//QS:4
+	private void fibonacciSeries() {
+		// 0 1 1 2 3 5 8 13 21 34  565......
+		int a = 0;
+		int b = 1;	
+		int count = 3;
+		System.out.print(a+" ");
+		System.out.print(b+" ");
+		while (count <12) {
+			int c = a + b; // 
+			a =b;//
+			b= c;//
+			System.out.print(c+" ");     
+			count++;
+		}
+		System.out.println();
+		System.out.println("<===================================>");
+	}
+	//QS:5
+	private void swapUsingThird() {
+		int a = 1;
+		int b = 2;
+		int c ;
+		System.out.println("The value of a and b before swaping: "+a+" ,"+b);
+		c = a;
+		a = b;
+		b = c;
+		System.out.println("The value of a and b after swaping: "+a+" ,"+b);
+		System.out.println("<===================================>");
+	}
+	//QS:6
+	public void swapWithOutThird() {
+		// a single plate can have 7 spoon of any food item
+		int a = 2 ; //spoon of curd
+		int b = 5; //spoons of noodles
+		System.out.println("The value of a and b before swaping: "+a+" ,"+b);
+		a = a + b;//a=7 b =5
+		b = a - b;// b=2 a = 7
+		a = a - b;//  a=7 b = 2->a=5
+		System.out.println("The value of a and b after swaping: "+a+" ,"+b);
+		System.out.println("<===================================>");
+
+	}
+	//QS:7
+	private void reverseNo() {
+		int a = 12345;
+		int n1,n2 = 0;
+		System.out.println("No before reversing: "+a);
+		while (a>0) {
+
+			n1 = a%10;
+			n2 = (n2*10) + n1;
+			a = a/10;
+		}
+
+		System.out.println("No after reversing: "+n2);
+		System.out.println("<===================================>");
+	}
+	//QS:8
+	private void checkPalindrome() {
+
+		int a = 121;
+		int n = a;
+		int b,c=0;
+		while (a>0) {
+			b = a%10;
+			c = (c*10) + b;
+			a = a/10;
+		}
+		if (c==n) {
+			System.out.println("Palindrome");
+		} else {
+			System.out.println("Not a Palindrome");
+		}
+		System.out.println("<===================================>");
+	}
+	//QS:9
+	//1 to 100
+	private void checkPalindromes() {
+		int count= 0;
+		for (int i = 0; i <100; i++) {
+
+			int a = i;
+			int n = a;
+			int b,c=0;
+			while (a>0) {
+				b = a%10;
+				c = (c*10) + b;
+				a = a/10;
+			}
+			if (c==n) {
+				System.out.print(i+" ");
+				count++;
+			} 
+		}
+		System.out.println();
+		System.out.println("The count of Palindrome: "+count);
+		System.out.println("<===================================>");
+	}
+	//QS:10
+	private void armstrongNo() {
+
+		int a = 153;
+		int n =a;
+		int b,c=0;
+		while (a>0) {
+
+			b = a%10;
+			c =     c  +    (b*b*b) ;
+			a = a/10;
+		}
+		if (c==n) {
+			System.out.println("Its Armstrong No");
+		} else {
+			System.out.println("Its not Armstrong No");
+		}
+		System.out.println("<===================================>");
+	}
+	public static void main(String[] args) {
+
+		Sample s = new Sample();
+		s.sumOfOddNo();
+		s.sumOfEvenNo();
+		s.factorial();
+		s.fibonacciSeries();
+		s.swapUsingThird();
+		s.swapWithOutThird();
+		s.reverseNo();
+		s.checkPalindrome();
+		s.checkPalindromes();
+		s.armstrongNo();
+
+	}
+
+
+
+
+
+}
